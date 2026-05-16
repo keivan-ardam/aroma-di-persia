@@ -26,7 +26,7 @@ function preloadFrames(): Promise<void> {
     let loaded = 0
     for (let i = 1; i <= FRAME_COUNT; i++) {
       const img = new Image()
-      img.src = `/frames/frame_${String(i).padStart(3, '0')}.jpg`
+      img.src = `${import.meta.env.BASE_URL}frames/frame_${String(i).padStart(3, '0')}.jpg`
       img.onload = () => { if (++loaded === FRAME_COUNT) resolve() }
       img.onerror = () => { if (++loaded === FRAME_COUNT) resolve() }
       frames.push(img)

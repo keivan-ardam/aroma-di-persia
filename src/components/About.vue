@@ -7,6 +7,7 @@ import { useI18n } from '../composables/useI18n'
 gsap.registerPlugin(ScrollTrigger)
 
 const { t } = useI18n()
+const base = import.meta.env.BASE_URL
 const sectionRef = ref<HTMLElement | null>(null)
 let ctx: gsap.Context | null = null
 
@@ -33,7 +34,7 @@ onUnmounted(() => ctx?.revert())
       <div class="about-img relative">
         <div class="absolute -inset-4 bg-saffron/5 rounded-lg blur-2xl"></div>
         <img
-          src="/6030401046326217810.jpg"
+          :src="`${base}6030401046326217810.jpg`"
           alt="Persian cuisine"
           class="relative rounded-lg shadow-2xl w-full object-cover aspect-[4/5] border border-saffron/10"
         />
