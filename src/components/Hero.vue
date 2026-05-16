@@ -37,12 +37,15 @@ function preloadFrames(): Promise<void> {
 function renderFrame(index: number) {
   if (!frameCanvasRef.value) return
   const ctx = frameCanvasRef.value.getContext('2d')
-  if (!ctx || !frames[index]) return
+  if (!ctx || !frames[index] || !frames[index].complete) return
   const canvas = frameCanvasRef.value
   const img = frames[index]
-  const scale = Math.max(canvas.width / img.width, canvas.height / img.height)
-  const w = img.width * scale
-  const h = img.height * scale
+  const imgW = img.naturalWidth || img.width
+  const imgH = img.naturalHeight || img.height
+  if (!imgW || !imgH) return
+  const scale = Math.max(canvas.width / imgW, canvas.height / imgH)
+  const w = imgW * scale
+  const h = imgH * scale
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   ctx.drawImage(img, (canvas.width - w) / 2, (canvas.height - h) / 2, w, h)
 }
