@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0A1628;
+  --color-navy-light: #0F1F38;
+  --color-saffron: #D4A017;
+  --color-pomegranate: #8B1A2C;
+  --color-amber: #E8A838;
+  --color-cream: #F5F0E8;
+  --color-charcoal: #2B2B2B;
+  --color-pistachio: #7D9B6A;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.text-shadow-luxury {
+  text-shadow: 0 2px 20px rgba(212, 160, 23, 0.3), 0 0 40px rgba(10, 22, 40, 0.8);
+}
+
+.gradient-overlay {
+  background: linear-gradient(to bottom, transparent 0%, rgba(10, 22, 40, 0.4) 50%, rgba(10, 22, 40, 0.9) 100%);
+}
+
+.saffron-glow {
+  box-shadow: 0 0 60px rgba(212, 160, 23, 0.15), 0 0 120px rgba(212, 160, 23, 0.05);
+}
+
+.menu-card {
+  background: linear-gradient(135deg, rgba(15, 31, 56, 0.9) 0%, rgba(10, 22, 40, 0.95) 100%);
+  border: 1px solid rgba(212, 160, 23, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-card:hover {
+  border-color: rgba(212, 160, 23, 0.4);
+  box-shadow: 0 20px 60px rgba(212, 160, 23, 0.1), 0 0 80px rgba(212, 160, 23, 0.05);
+  transform: translateY(-4px);
+}
+
+.parallax-img {
+  transition: transform 0.1s linear;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-saffron);
+  border-radius: 3px;
+}
